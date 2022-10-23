@@ -1,4 +1,4 @@
-export class Trainer {
+export default class Trainer {
   private id: number;
   private name: string;
 

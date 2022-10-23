@@ -7,13 +7,11 @@ export default function App() {
 
       
       return (
-            <div>
                   <BrowserRouter>
                         <Routes>
-                              <Route path="/" element={<DashboardComponent />}></Route>
+                              <Route path="/" element={<DashboardComponent />} />
                         </Routes>
                   </BrowserRouter>
-            </div>
       )
 
 }

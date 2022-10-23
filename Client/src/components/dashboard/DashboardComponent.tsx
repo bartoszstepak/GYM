@@ -1,30 +1,33 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import './DashboardComponent.css'
+import Trainer from "../../models/TrainerModel";
+import UserController from "../../controllers/UserController";
 
-class DashboardComponent extends Component {
+import "./DashboardComponent.css";
 
-  constructor(props) {
+class DashboardComponent extends Component<any, any> {
+  constructor(props: {} | Readonly<{}>) {
     super(props);
-    this.state = {};
+    this.state = {
+      trainer: Trainer,
+    };
   }
 
   componentDidMount() {
+    this.initializeDashboardData();
   }
 
-  componentWillUnmount() {
+  componentWillUnmount() {}
+
+  initializeDashboardData() {
+    const userController = new UserController();
+    var trainer = userController.getTrainer(1);
+    this.setState({ trainer: trainer });
   }
 
-  render() {  
-    return (
-      <div>
-        
-        <h2>Dashboard</h2>
-
-      </div>
-    );
+  render() {
+    return <div>Witaj, {this.state.trainer.name}!</div>;
   }
-
 }
 
 export default DashboardComponent;
