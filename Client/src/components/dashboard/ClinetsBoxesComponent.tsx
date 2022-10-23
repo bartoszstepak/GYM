@@ -25,7 +25,6 @@ class ClinetsBoxesComponent extends React.Component<any, any> {
     const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
     const theme = createTheme();
-
     return (
       <div className="widgete-tool-container">
         return (
@@ -45,7 +44,7 @@ class ClinetsBoxesComponent extends React.Component<any, any> {
                         }
                         title="Janasds Nowakasdasd"
                       />
-                      <CardMedia
+                      <CardMedia className="card-media-custom"
                         component="img"
                         height="270"
                         image={require('./photo.jpg')}
