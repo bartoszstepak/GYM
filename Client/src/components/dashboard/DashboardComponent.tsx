@@ -8,6 +8,7 @@ import ClinetsBoxesComponent from "./ClinetsBoxesComponent";
 import { Button } from "react-bootstrap";
 
 import "./DashboardComponent.css";
+import { Typography } from "@mui/material";
 
 class DashboardComponent extends Component<any, any> {
   constructor(props: {} | Readonly<{}>) {
@@ -33,12 +34,14 @@ class DashboardComponent extends Component<any, any> {
     return (
       <div className="container-fluid container-custom dashboard-component">
         <div className="text-center">
-          <h1>Witaj, {this.state.trainer.name}!</h1>
+          <Typography variant="h2" color="inherit" noWrap>
+            Witaj, {this.state.trainer.name}!{" "}
+          </Typography>
           <div className="widgete-tool-container">
-            <WidgeteToolComponent trainerID={this.state.trainer.id}/>
+            <WidgeteToolComponent trainerID={this.state.trainer.id} />
           </div>
           <div className="clients-box-container">
-            <ClinetsBoxesComponent trainerID={this.state.trainer.id}/>
+            <ClinetsBoxesComponent trainerID={this.state.trainer.id} />
           </div>
         </div>
       </div>
