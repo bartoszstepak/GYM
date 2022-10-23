@@ -32,11 +32,11 @@ class ClinetsBoxesComponent extends React.Component<any, any> {
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <main>
-            <Container  sx={{ py: 8 }}>
-              <Grid container spacing={4} sx={{ padding: "0px" }}>
+            <Container maxWidth="xl" sx={{ py: 8 }}>
+              <Grid container spacing={4} sx={{ padding: "0px" , display: 'flex'}}>
                 {cards.map((card) => (
                   <Grid item key={card} xs={12} sm={6} md={4}>
-                    <Card sx={{ wid: 'auto', minHeight: '150px' }}>
+                    <Card sx={{ wid: "auto", minheight: "400px" }}>
                       <CardHeader
                         avatar={
                           <Avatar sx={{}} aria-label="recipe">
@@ -47,8 +47,8 @@ class ClinetsBoxesComponent extends React.Component<any, any> {
                       />
                       <CardMedia
                         component="img"
-                        height="194"
-                        image="https://source.unsplash.com/random"
+                        height="270"
+                        image={require('./photo.jpg')}
                         alt="random"
                       />
                     </Card>
