@@ -1,7 +1,12 @@
 
-
+.dashboard-component {
+    padding-top: 30px;
+}
 
 .dashboard-title{
     font-weight: 900;
 }
 
+.widgete-tool-container {
+
+}
