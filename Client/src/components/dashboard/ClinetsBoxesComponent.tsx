@@ -22,7 +22,34 @@ class ClinetsBoxesComponent extends React.Component<any, any> {
   }
 
   render() {
-    const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    const cards = [
+      {
+        name: 'grafik',
+        imgURL: 'grafik.png'
+      }, 
+      {
+        name: 'cwiczenia',
+        imgURL: 'cwiczenia.png'
+      }, 
+      {
+        name: 'podopieczni',
+        imgURL: 'podopieczni.png'
+      }, 
+      {
+        name: 'szablony',
+        imgURL: 'szablony.png'
+      }, 
+      {
+        name: 'ustawienia',
+        imgURL: 'ustawienia.png'
+      }, 
+      {
+        name: 'notatnik',
+        imgURL: 'notatnik.png'
+      }, 
+      
+
+    ];
 
     const theme = createTheme();
     return (
@@ -31,26 +58,26 @@ class ClinetsBoxesComponent extends React.Component<any, any> {
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <main>
-            <Container maxWidth="xl" sx={{ py: 8 }}>
-              <Grid container spacing={4} sx={{ padding: "0px" , display: 'flex'}}>
+            <Container maxWidth="xl"  sx={{ py: 8 }}>
+              <Grid
+                container
+                spacing={4}
+                sx={{ padding: "0px", display: "flex" }}
+              >
                 {cards.map((card) => (
-                  <Grid item key={card} xs={12} sm={6} md={4}>
-                    <Card sx={{ wid: "auto", minheight: "400px" }}>
-                      <CardHeader
-                        avatar={
-                          <Avatar sx={{}} aria-label="recipe">
-                            JN
-                          </Avatar>
-                        }
-                        title="Janasds Nowakasdasd"
-                      />
-                      <CardMedia className="card-media-custom"
+                  <Grid item key={card.name} xs={6} sm={4} md={3}>
+                    <div className="box" >
+                    <Card   sx={{  backgroundColor: "white"}}>
+                      <CardMedia
+                        className="card-media-custom"
                         component="img"
-                        height="270"
-                        image={require('./photo.jpg')}
+                        image={require("../../static/"+card.imgURL)}
                         alt="random"
                       />
                     </Card>
+
+                    </div>
+                    
                   </Grid>
                 ))}
               </Grid>
